@@ -1,5 +1,5 @@
 # microbit
-code for BBC Microbit: copy code and paste into microbit editor-download from microbit editor-transfer to microbit via drag and drop.
+code for BBC Microbit: copy code and paste into microbit editor -> download to computer from microbit editor -> transfer to microbit via drag and drop.
 
 editor:
 https://python.microbit.org/v/2.0
