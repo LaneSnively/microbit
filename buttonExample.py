@@ -19,7 +19,7 @@ for w in range(100):
 x=0
 y=0
 time=0
-while time < 6666:
+while time < 500:
     time+=1
     if button_a.is_pressed():
         x-=1
@@ -47,6 +47,8 @@ while True:
         for l in range(4):
             display.set_pixel(l,w%5,a)
             display.set_pixel(w%5,l,a)
+            display.set_pixel(l,l,a)
+            display.set_pixel(w%5,w%5,9)
             sleep(w%50)
             a+=1
             if(a==10):
