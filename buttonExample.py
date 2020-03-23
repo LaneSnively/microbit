@@ -7,7 +7,7 @@ from microbit import *
 
 def cool():
     a=1
-    for w in range(100):
+    for w in range(75):
         for l in range(4):
             display.set_pixel(l,w%5,a)
             display.set_pixel(w%5,l,a)
@@ -45,7 +45,7 @@ def game():
         display.clear()
         
 def lane():
-    for a in range(100):
+    for a in range(10):
         display.set_pixel(0,0,9)
         sleep(450)
         display.set_pixel(0,1,9)
@@ -79,7 +79,7 @@ def lane():
         display.clear()
         
 def snively():
-    for a in range(100):
+    for a in range(10):
         h=0
         while h<5:
             display.set_pixel(h,h,9)
