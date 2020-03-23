@@ -6,15 +6,16 @@
 from microbit import *
 
 a=1
-for w in range(100):
-    for l in range(4):
-        display.set_pixel(l,w%5,a)
-        display.set_pixel(w%5,l,a)
-        sleep(w%50)
-        a+=1
-        if(a==10):
-            a=1
-            display.clear()
+    for w in range(100):
+        for l in range(4):
+            display.set_pixel(l,w%5,a)
+            display.set_pixel(w%5,l,a)
+            display.set_pixel(l,l,a)
+            display.set_pixel(w%5,w%5,a)
+            sleep(w%50)
+            a+=1
+            if(a==10):
+                a=1
 
 x=0
 y=0
@@ -40,16 +41,42 @@ while time < 500:
     display.set_pixel(x,y,9)
     sleep(85)
     display.clear()
-  
+
+h=0
+while h<5:
+    display.set_pixel(h,h,9)
+    for i in range(0,5):
+        display.set_pixel(h,i,9)
+    display.clear()
+    i+=1
+    
 while True:
-    a=1
-    for w in range(100):
-        for l in range(4):
-            display.set_pixel(l,w%5,a)
-            display.set_pixel(w%5,l,a)
-            display.set_pixel(l,l,a)
-            display.set_pixel(w%5,w%5,a)
-            sleep(w%50)
-            a+=1
-            if(a==10):
-                a=1
+    display.set_pixel(0,0,9)
+    display.clear()
+    display.set_pixel(0,1,9)
+    display.set_pixel(1,1,9)
+    display.set_pixel(1,0,9)
+    display.clear()
+    display.set_pixel(0,2,9)
+    display.set_pixel(1,2,9)
+    display.set_pixel(2,2,9)
+    display.set_pixel(2,1,9)
+    display.set_pixel(2,0,9)
+    display.clear()
+    display.set_pixel(0,3,9)
+    display.set_pixel(1,3,9)
+    display.set_pixel(2,3,9)
+    display.set_pixel(3,3,9)
+    display.set_pixel(3,2,9)
+    display.set_pixel(3,1,9)
+    display.set_pixel(3,0,9)
+    display.clear()
+    display.set_pixel(0,4,9)
+    display.set_pixel(1,4,9)
+    display.set_pixel(2,4,9)
+    display.set_pixel(3,4,9)
+    display.set_pixel(4,4,9)
+    display.set_pixel(4,3,9)
+    display.set_pixel(4,2,9)
+    display.set_pixel(4,1,9)
+    display.set_pixel(4,0,9)
