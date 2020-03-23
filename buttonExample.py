@@ -4,7 +4,6 @@
 #https://github.com/bbcmicrobit/micropython
 
 from microbit import *
-import random
 
 a=1
 for w in range(100):
@@ -15,6 +14,7 @@ for w in range(100):
         a+=1
         if(a==10):
             a=1
+            display.clear()
 
 x=0
 y=0
@@ -36,5 +36,5 @@ while True:
     if y<0:
         y=4
     display.set_pixel(x,y,9)
-    sleep(75)
+    sleep(85)
     display.clear()
