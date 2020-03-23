@@ -4,23 +4,33 @@
 #https://github.com/bbcmicrobit/micropython
 
 from microbit import *
+import random
 
-display.set_pixel(0,0,9)
+a=1
+for w in range(100):
+    for l in range(4):
+        display.set_pixel(l,w%5,a)
+        display.set_pixel(w%5,l,a)
+        sleep(w%50)
+        a+=1
+        if(a==10):
+            a=1
+
 x=0
 y=0
 while True:
     if button_a.is_pressed():
-        x=x-1
-    elif button_b.is_pressed():
-        x=x+1
+        x-=1
+    if button_b.is_pressed():
+        x+=1
+    if button_a.is_pressed() and button_b.is_pressed():
+        y+=1
+    if not button_a.is_pressed() and not button_b.is_pressed():
+        y-=1
     if x>4:
         x=0
     if x<0:
         x=4
-    if pin0.is_touched():
-        y=y-1
-    elif pin1.is_touched():
-        y=y+1
     if y>4:
         y=0
     if y<0:
