@@ -78,19 +78,7 @@ def lane():
         sleep(450)
         display.clear()
         
-def snively():
-    for a in range(10):
-        h=0
-        while h<5:
-            display.set_pixel(h,h,9)
-            for i in range(0,5):
-                display.set_pixel(h,i,9)
-                h+=1
-                sleep(450)
-                display.clear()
-                
 while True:
     cool()
     game()
     lane()
-    snively()
