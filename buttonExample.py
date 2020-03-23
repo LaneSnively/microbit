@@ -48,7 +48,7 @@ while True:
             display.set_pixel(l,w%5,a)
             display.set_pixel(w%5,l,a)
             display.set_pixel(l,l,a)
-            display.set_pixel(w%5,w%5,9)
+            display.set_pixel(w%5,w%5,a)
             sleep(w%50)
             a+=1
             if(a==10):
