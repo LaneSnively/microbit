@@ -47,17 +47,17 @@ def game():
 def lane():
     for a in range(100):
         display.set_pixel(0,0,9)
-        sleep(250)
+        sleep(450)
         display.set_pixel(0,1,9)
         display.set_pixel(1,1,9)
         display.set_pixel(1,0,9)
-        sleep(250)
+        sleep(450)
         display.set_pixel(0,2,9)
         display.set_pixel(1,2,9)
         display.set_pixel(2,2,9)
         display.set_pixel(2,1,9)
         display.set_pixel(2,0,9)
-        sleep(250)
+        sleep(450)
         display.set_pixel(0,3,9)
         display.set_pixel(1,3,9)
         display.set_pixel(2,3,9)
@@ -65,7 +65,7 @@ def lane():
         display.set_pixel(3,2,9)
         display.set_pixel(3,1,9)
         display.set_pixel(3,0,9)
-        sleep(250)
+        sleep(450)
         display.set_pixel(0,4,9)
         display.set_pixel(1,4,9)
         display.set_pixel(2,4,9)
@@ -75,7 +75,8 @@ def lane():
         display.set_pixel(4,2,9)
         display.set_pixel(4,1,9)
         display.set_pixel(4,0,9)
-        sleep(250)
+        sleep(450)
+        display.clear()
         
 def snively():
     for a in range(100):
@@ -85,7 +86,8 @@ def snively():
             for i in range(0,5):
                 display.set_pixel(h,i,9)
                 h+=1
-                sleep(250)
+                sleep(450)
+                display.clear()
                 
 while True:
     cool()
