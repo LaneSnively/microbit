@@ -11,7 +11,7 @@ while True:
     lane()
     snively()
 
-def cool():
+def cool()
     a=1
     for w in range(100):
         for l in range(4):
@@ -24,7 +24,7 @@ def cool():
             if(a==10):
                 a=1
     
-def game():
+def game()
     x=0
     y=0
     time=0
@@ -50,7 +50,7 @@ def game():
         sleep(85)
         display.clear()
         
-def lane():
+def lane()
     display.set_pixel(0,0,9)
     display.clear()
     sleep(85)
@@ -87,7 +87,7 @@ def lane():
     display.clear()
     sleep(85)
     
-def snively():
+def snively()
     h=0
     while h<5:
         display.set_pixel(h,h,9)
