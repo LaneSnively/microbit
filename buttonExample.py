@@ -17,7 +17,7 @@ def cool():
             a+=1
             if(a==10):
                 a=1
-    
+                
 def game():
     x=0
     y=0
@@ -45,49 +45,52 @@ def game():
         display.clear()
         
 def lane():
-    display.set_pixel(0,0,9)
-    display.clear()
-    sleep(85)
-    display.set_pixel(0,1,9)
-    display.set_pixel(1,1,9)
-    display.set_pixel(1,0,9)
-    display.clear()
-    sleep(85)
-    display.set_pixel(0,2,9)
-    display.set_pixel(1,2,9)
-    display.set_pixel(2,2,9)
-    display.set_pixel(2,1,9)
-    display.set_pixel(2,0,9)
-    display.clear()
-    sleep(85)
-    display.set_pixel(0,3,9)
-    display.set_pixel(1,3,9)
-    display.set_pixel(2,3,9)
-    display.set_pixel(3,3,9)
-    display.set_pixel(3,2,9)
-    display.set_pixel(3,1,9)
-    display.set_pixel(3,0,9)
-    display.clear()
-    sleep(85)
-    display.set_pixel(0,4,9)
-    display.set_pixel(1,4,9)
-    display.set_pixel(2,4,9)
-    display.set_pixel(3,4,9)
-    display.set_pixel(4,4,9)
-    display.set_pixel(4,3,9)
-    display.set_pixel(4,2,9)
-    display.set_pixel(4,1,9)
-    display.set_pixel(4,0,9)
-    display.clear()
-    sleep(85)
-    
+    for a in range(100):
+        display.set_pixel(0,0,9)
+        display.clear()
+        sleep(85)
+        display.set_pixel(0,1,9)
+        display.set_pixel(1,1,9)
+        display.set_pixel(1,0,9)
+        display.clear()
+        sleep(85)
+        display.set_pixel(0,2,9)
+        display.set_pixel(1,2,9)
+        display.set_pixel(2,2,9)
+        display.set_pixel(2,1,9)
+        display.set_pixel(2,0,9)
+        display.clear()
+        sleep(85)
+        display.set_pixel(0,3,9)
+        display.set_pixel(1,3,9)
+        display.set_pixel(2,3,9)
+        display.set_pixel(3,3,9)
+        display.set_pixel(3,2,9)
+        display.set_pixel(3,1,9)
+        display.set_pixel(3,0,9)
+        display.clear()
+        sleep(85)
+        display.set_pixel(0,4,9)
+        display.set_pixel(1,4,9)
+        display.set_pixel(2,4,9)
+        display.set_pixel(3,4,9)
+        display.set_pixel(4,4,9)
+        display.set_pixel(4,3,9)
+        display.set_pixel(4,2,9)
+        display.set_pixel(4,1,9)
+        display.set_pixel(4,0,9)
+        display.clear()
+        sleep(85)
+        
 def snively():
-    h=0
-    while h<5:
-        display.set_pixel(h,h,9)
-        for i in range(0,5):
-            display.set_pixel(h,i,9)
-            display.clear()
+    for a in range(100):
+        h=0
+        while h<5:
+            display.set_pixel(h,h,9)
+            for i in range(0,5):
+                display.set_pixel(h,i,9)
+                display.clear()
+                h+=1
             
 while True:
     cool()
