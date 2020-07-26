@@ -1,9 +1,10 @@
 from microbit import *
+import machine
 
 
 class Enemy:
     """
-    Enemy which moves vertically down the screen
+    Enemy which moves vertically up and down the screen
     """
     def __init__(self):
         self.x = 2
@@ -13,7 +14,10 @@ class Enemy:
         return ((self.x, self.y), (self.x, self.y + 1 if self.y < 4 else 0))
 
     def move(self):
-        self.y = (self.y + 1) % 5
+        if self.y % 2 == 0:
+            self.y = (self.y + 1) % 5
+        else:
+            self.y = (self.y - 1) % 5
 
     def draw(self):
         for x, y in self.get_positions():
@@ -47,9 +51,18 @@ class Player:
         """
         self.alive = False
         i = 0
-        while(i < 20):
-            display.show(str(self.score))
+        while(i < 10):
+            display.show(Image.ALL_CLOCKS, delay = (i * 30) % 75)
+            sleep(75)
+            display.scroll(str(self.score))
+            sleep(75)
+            display.show(Image.ALL_CLOCKS, delay = i * 3)
+            sleep(75)
             i = i + 1
+        
+        display.show(Image.GHOST)
+        sleep(10000)
+        machine.reset()
 
     def move(self):
         """
@@ -83,7 +96,7 @@ class Game:
     def __init__(self):
         self.enemy = Enemy()
         self.player = Player()
-        self.frame_rate = 1
+        self.frame_rate = 4
 
     def detect_collisions(self):
         """
@@ -97,7 +110,8 @@ class Game:
         """
         # Adjust the speed as the player's score gets higher
         # (But don't let it exceed the actual frame rate)
-        self.frame_rate = max(1, min(100, self.player.score))
+        if self.frame_rate % 3 == 0:
+            self.frame_rate = max(1, min(100, self.player.score))
 
         if self.player.alive:
             display.clear()
