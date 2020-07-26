@@ -1,5 +1,4 @@
 from microbit import *
-import music
 
 
 class Enemy:
@@ -7,13 +6,13 @@ class Enemy:
     Enemy which moves vertically down the screen
     """
     def __init__(self):
-        self.x, self.y = 2, -1
+        self.x = 2
+        self.y = -1
 
     def get_positions(self):
         return ((self.x, self.y), (self.x, self.y + 1 if self.y < 4 else 0))
 
     def move(self):
-        # Rotate back round to the top
         self.y = (self.y + 1) % 5
 
     def draw(self):
@@ -35,7 +34,8 @@ class Player:
         self.alive = True
         self.score = 0
         self.just_scored = False
-        self.x, self.y = self.LEFT_EDGE, 2
+        self.x = self.LEFT_EDGE
+        self.y = 2
         self.direction = self.STOPPED
 
     def get_position(self):
@@ -46,8 +46,10 @@ class Player:
         Player dies - show their score and play sad music
         """
         self.alive = False
-        display.show(str(self.score))
-        music.play(music.WAWAWAWAA)
+        i = 0
+        while(i < 20)
+            display.show(str(self.score))
+            i = i + 1
 
     def move(self):
         """
@@ -65,12 +67,7 @@ class Player:
             self.direction = self.STOPPED
 
     def draw(self):
-        """
-        Draw the player
-        """
         display.set_pixel(self.x, self.y, 9)
-        if self.just_scored:
-            music.pitch(400, 40)
 
     def act_on_input(self):
         # If we're standing still, look for a button press.
