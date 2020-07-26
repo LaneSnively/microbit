@@ -10,3 +10,5 @@ https://microbit-micropython.readthedocs.io/en/latest/tutorials/hello.html
 website:
 https://microbit.org/get-started/user-guide/python/
 
+documentation:
+https://microbit-micropython.readthedocs.io/en/latest/index.html
