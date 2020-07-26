@@ -2,9 +2,9 @@ from microbit import *
 import machine
 
 
-class Enemy:
+class Car:
     """
-    Enemy which moves vertically up and down the screen
+    Car which moves vertically up and down the screen
     """
     def __init__(self):
         self.x = 2
@@ -43,22 +43,19 @@ class Player:
         return (self.x, self.y)
 
     def die(self):
-        """
-        Player dies - show their score and play sad music
-        """
         self.alive = False
-        i = 0
+        i = 2
         while(i < 10):
-            display.show(Image.ALL_CLOCKS, delay = i * 100)
+            display.show(Image.ALL_CLOCKS, delay = i * 10)
             sleep(75)
             display.scroll(str(self.score))
             sleep(75)
-            display.show(Image.ALL_CLOCKS, delay = i * 10)
+            display.show(Image.ALL_CLOCKS, delay = i * 2)
             sleep(75)
             i += 1
         
         display.show(Image.GHOST)
-        sleep(10000)
+        sleep(5000)
         machine.reset()
 
     def move(self):
@@ -91,15 +88,16 @@ class Player:
 
 class Game:
     def __init__(self):
-        self.enemy = Enemy()
+        display.scroll("crossy street")
+        self.car = Car()
         self.player = Player()
-        self.frame_rate = 5
+        self.frame_rate = 7
 
     def detect_collisions(self):
         """
-        Have the player and the enemy collided?
+        Have the player and the car collided?
         """
-        return self.player.get_position() in self.enemy.get_positions()
+        return self.player.get_position() in self.car.get_positions()
 
     def do_frame(self):
         """
@@ -107,19 +105,20 @@ class Game:
         """
         # Adjust the speed as the player's score gets higher
         # (But don't let it exceed the actual frame rate)
-        self.frame_rate = max(1, min(100, self.player.score))
+        if self.player.score % 2 == 0:
+            self.frame_rate = max(7, min(15, self.player.score))
 
         if self.player.alive:
             display.clear()
 
-            self.enemy.move()
+            self.car.move()
             self.player.act_on_input()
             self.player.move()
 
             if self.detect_collisions():
                 self.player.die()
             else:
-                self.enemy.draw()
+                self.car.draw()
                 self.player.draw()
 
 
