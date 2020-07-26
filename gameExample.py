@@ -47,7 +47,7 @@ class Player:
         """
         self.alive = False
         i = 0
-        while(i < 20)
+        while(i < 20):
             display.show(str(self.score))
             i = i + 1
 
